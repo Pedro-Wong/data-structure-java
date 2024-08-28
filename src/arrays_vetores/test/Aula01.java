@@ -14,7 +14,10 @@ public class Aula01 {
 			vetor.add("primeira posição");
 			vetor.add("segunda posição");
 			vetor.add("terceira posição");
-			System.out.println(vetor.tamanho());
+
+			System.out.println(vetor.search(2));
+			
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
