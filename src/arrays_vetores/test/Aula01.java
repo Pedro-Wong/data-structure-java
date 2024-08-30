@@ -8,14 +8,21 @@ public class Aula01 {
 		// TODO Auto-generated method stub
 
 		
-		Vetor vetor = new Vetor(10);
+		Vetor vetor = new Vetor(2);
 		
 		try {
-			vetor.add("primeira posição");
-			vetor.add("segunda posição");
-			vetor.add("terceira posição");
+			
+			for(int i = 0; i < 3; i++) {
+				vetor.add(" Posição " + i);	
+				
+			}
+//			vetor.add("primeira posição");
+//			vetor.add("segunda posição");
+//			vetor.add("terceira posição");
+			
+			System.out.println(vetor.toString());
 
-			System.out.println(vetor.search(2));
+//			System.out.println(vetor.search(2));
 			
 			
 		}catch(Exception e) {
