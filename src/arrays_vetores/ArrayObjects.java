@@ -1,30 +1,24 @@
 package arrays_vetores;
 
-import java.util.Arrays;
+public class ArrayObjects {
 
-public class Vetor {
+	private Object[] elementos;
 
-	private String[] elementos;
-	
 //	Controla o tamanho real do vetor
 	private int tam;
 
-	public Vetor(int cap) {
-		this.elementos = new String[cap];
+	public ArrayObjects(int cap) {
+		this.elementos = new Object[cap];
 		this.tam = 0;
 	}
 
-//	  public void add(String element) { for (int i = 0; i < this.elementos.length;
-//	  i++) { if (this.elementos[i] == null) { this.elementos[i] = element; break; }
-//	  } }
-
-	public String[] getElementos() {
+	public Object[] getElementos() {
 		return elementos;
 	}
 
 	// Adicionando elementos na última posição
 
-	public void add(String element) throws Exception {
+	public void add(Object element) throws Exception {
 		this.addMoreCapacity();
 		if (this.tam < this.elementos.length) {
 			this.elementos[this.tam] = element;
@@ -63,7 +57,7 @@ public class Vetor {
 	}
 
 	// pegando um elemento de uma posição
-	public String search(int position) {
+	public Object search(int position) {
 		if (!(position >= 0 && position < tam)) {
 			throw new IllegalArgumentException("Position not allowed");
 		}
@@ -73,7 +67,7 @@ public class Vetor {
 
 	// algoritmo de busca sequencial simples em vetor para verificar se um elemento
 	// existe
-	public int contain(String element) {
+	public int contain(Object element) {
 		for (int i = 0; i < this.tam; i++) {
 			if (this.elementos[i].equals(element)) {
 				return i;
@@ -84,15 +78,14 @@ public class Vetor {
 	}
 
 //	Adicionar um elemento em qualquer posição do array
-	public boolean add(int position, String element) {
+	public boolean add(int position, Object element) {
 
 		if (!(position >= 0 && position < tam)) {
 			throw new IllegalArgumentException("Position not allowed");
 		}
-		
+
 		this.addMoreCapacity();
-		
-		
+
 //		mover todos os elementos
 		for (int i = this.tam - 1; i >= position; i--) {
 			this.elementos[i + 1] = this.elementos[i];
@@ -104,34 +97,32 @@ public class Vetor {
 		return true;
 
 	}
-	
+
 //	adicionando mais capacidade no vetor
-	
+
 	private void addMoreCapacity() {
-		
-		if(this.tam == this.elementos.length) {
-			String[] newElementos = new String[this.elementos.length * 2];
-			for(int i = 0; i < this.elementos.length; i++) {
-				newElementos[i] = this.elementos[i];	
+
+		if (this.tam == this.elementos.length) {
+			Object[] newElementos = new Object[this.elementos.length * 2];
+			for (int i = 0; i < this.elementos.length; i++) {
+				newElementos[i] = this.elementos[i];
 			}
-			this.elementos = newElementos;		
+			this.elementos = newElementos;
 		}
 
 	}
-	
-	
+
 //	removendo elementos de uma posição do array
-	
+
 	public void remove(int position) {
-		if(!(position >= 0 && position < this.tam)) {
+		if (!(position >= 0 && position < this.tam)) {
 			throw new IllegalArgumentException("Posição não existente");
 		}
-		
-		for(int i = position; i < this.tam - 1; i ++) {
-			this.elementos[i] = this.elementos[i+1];
+
+		for (int i = position; i < this.tam - 1; i++) {
+			this.elementos[i] = this.elementos[i + 1];
 		}
-		this.tam--;		
+		this.tam--;
 	}
-	
-	
+
 }
