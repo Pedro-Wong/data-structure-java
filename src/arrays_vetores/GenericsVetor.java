@@ -130,4 +130,47 @@ public class GenericsVetor<T> {
 		this.tam--;
 	}
 
+	// último indice de um elemento
+
+	public int lastIndex(T element) {
+
+		for (int i = this.tam - 1; i >= 0; i--) {
+			if (this.elementos[i].equals(element)) {
+				return i;
+			}
+
+		}
+
+		return -1;
+
+	}
+
+	// sobrecarregando o método remove, método remove melhorado
+	public void remove(T element) {
+		int pos = this.contain(element);
+		if (pos > -1) {
+			this.remove(pos);
+		}
+	}
+	
+	
+	// limpar o array e a referência de memória
+	
+	public void clean() {
+		/* opção 1 */
+		/* this.elementos = (T[]) new Object[this.elementos.length]; */
+		
+		/* opção 2*/
+		/* this.tam = 0; */
+		
+		/* opção 3 */
+		for(int i = 0; i<this.elementos.length; i++) {
+			this.elementos[i] = null;
+		}
+		this.tam = 0;
+	}
+	
+	
+	
+
 }
