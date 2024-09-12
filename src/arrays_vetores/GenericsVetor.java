@@ -34,54 +34,6 @@ public class GenericsVetor<T> {
 		}
 	}
 
-	// Mostrando o tamanho real do vetor
-	public int tamanho() {
-		return this.tam;
-	}
-
-	// Mostrando o array
-	@Override
-	public String toString() {
-
-		StringBuilder s = new StringBuilder();
-
-		s.append("[");
-
-		for (int i = 0; i < this.tam - 1; i++) {
-			s.append(this.elementos[i]);
-			s.append(", ");
-		}
-
-		if (this.tam > 0) {
-			s.append(this.elementos[this.tam - 1]);
-		}
-
-		s.append("]");
-
-		return s.toString();
-	}
-
-	// pegando um elemento de uma posição
-	public Object search(int position) {
-		if (!(position >= 0 && position < tam)) {
-			throw new IllegalArgumentException("Position not allowed");
-		}
-		return this.elementos[position];
-
-	}
-
-	// algoritmo de busca sequencial simples em vetor para verificar se um elemento
-	// existe
-	public int contain(T element) {
-		for (int i = 0; i < this.tam; i++) {
-			if (this.elementos[i].equals(element)) {
-				return i;
-			}
-
-		}
-		return -1;
-	}
-
 //	Adicionar um elemento em qualquer posição do array
 	public boolean add(int position, T element) {
 
@@ -115,6 +67,54 @@ public class GenericsVetor<T> {
 			this.elementos = newElementos;
 		}
 
+	}
+
+	// Mostrando o tamanho real do vetor
+	public int tamanho() {
+		return this.tam;
+	}
+
+	// Mostrando o array
+	@Override
+	public String toString() {
+
+		StringBuilder s = new StringBuilder();
+
+		s.append("[");
+
+		for (int i = 0; i < this.tam - 1; i++) {
+			s.append(this.elementos[i]);
+			s.append(", ");
+		}
+
+		if (this.tam > 0) {
+			s.append(this.elementos[this.tam - 1]);
+		}
+
+		s.append("]");
+
+		return s.toString();
+	}
+
+	// pegando um elemento de uma posição
+	public T search(int position) {
+		if (!(position >= 0 && position < tam)) {
+			throw new IllegalArgumentException("Position not allowed");
+		}
+		return this.elementos[position];
+
+	}
+
+	// algoritmo de busca sequencial simples em vetor para verificar se um elemento
+	// existe
+	public int contain(T element) {
+		for (int i = 0; i < this.tam; i++) {
+			if (this.elementos[i].equals(element)) {
+				return i;
+			}
+
+		}
+		return -1;
 	}
 
 //	removendo elementos de uma posição do array
@@ -152,25 +152,21 @@ public class GenericsVetor<T> {
 			this.remove(pos);
 		}
 	}
-	
-	
+
 	// limpar o array e a referência de memória
-	
+
 	public void clean() {
 		/* opção 1 */
 		/* this.elementos = (T[]) new Object[this.elementos.length]; */
-		
-		/* opção 2*/
+
+		/* opção 2 */
 		/* this.tam = 0; */
-		
+
 		/* opção 3 */
-		for(int i = 0; i<this.elementos.length; i++) {
+		for (int i = 0; i < this.elementos.length; i++) {
 			this.elementos[i] = null;
 		}
 		this.tam = 0;
 	}
-	
-	
-	
 
 }
