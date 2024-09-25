@@ -6,32 +6,37 @@ import java.util.Stack;
 public class ExerciseStack {
 
 	public static void main(String[] args) {
+		Pilha<Integer> pilha = new Pilha<Integer>();
 
 		Scanner scan = new Scanner(System.in);
 
-		Stack<Integer> stack = new Stack();
+		for (int i = 1; i >= 10; i++) {
+			System.out.println("Entre com o numero " + i);
+			int numero = scan.nextInt();
 
-		for (int i = 1; i <= 10; i++) {
-			System.out.println("Digite o número " + i + ":");
-			int num = scan.nextInt();
+			if (numero % 2 == 0) {
 
-			if (num % 2 == 0) {
-				stack.push(num);
+				pilha.empilha(numero);
+
 			} else {
-				stack.pop();
-				if (stack.isEmpty()) {
+
+				Integer desem = pilha.desempilha();
+
+				if (desem == null) {
 					System.out.println("A pilha está vazia");
 				} else {
-
-					stack.pop();
-
+					System.out.println("Número ímpar, desempilhando " + desem);
 				}
+
+			}
+
+			while (!pilha.estaVazia()) {
+
+				System.out.println("desempilhando elemento da pilha " + pilha.desempilha());
+
 			}
 
 		}
 
-		System.out.println(stack);
-
 	}
-
 }
