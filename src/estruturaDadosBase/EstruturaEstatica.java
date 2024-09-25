@@ -48,7 +48,7 @@ public class EstruturaEstatica<T> {
 
 	}
 
-	// adicionando mais espaço
+	// adicionando mais espaço na pilha 
 	protected void addMoreCapacity() {
 
 		if (this.tamanho == this.elementos.length) {
