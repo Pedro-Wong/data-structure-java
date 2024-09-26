@@ -19,30 +19,25 @@ public class ExerciseStack02 {
 			if (num == 0) {
 
 				Integer desemp = pilha.desempilha();
-				
-				//pilha par
-				
+
+				// pilha par
+
 				if (desemp == null) {
-					System.out.println("A Pilha par está vazia ");
+					System.out.println("A Pilha par está vazia");
 				} else {
-
 					System.out.println("Foi desempilhado da pilha par " + desemp);
-
 				}
-				
-				//pilha impar
-				
+
+				// pilha impar
+
 				desemp = pilha2.desempilha();
-				
+
 				if (desemp == null) {
 					System.out.println("A Pilha ímpar está vazia ");
 				} else {
-
 					System.out.println("Foi desempilhado da pilha ímpar" + desemp);
 				}
 
-				pilha.desempilha();
-				pilha2.desempilha();
 			} else if (num % 2 == 0) {
 				pilha.add(num);
 
@@ -53,18 +48,15 @@ public class ExerciseStack02 {
 		}
 
 		System.out.println("Desempilhando todos os números da pilha par");
-		while(!pilha.estaVazia()) {
+		while (!pilha.estaVazia()) {
 			System.out.println("Desempilhando da pilha par: " + pilha.desempilha());
 		}
-		
+
 		System.out.println("Desempilhando todos os números da pilha impar");
-		while(!pilha2.estaVazia()) {
+		while (!pilha2.estaVazia()) {
 			System.out.println("Desempilhando da pilha impar: " + pilha2.desempilha());
 		}
-		
-		
-		
-		
+
 	}
 
 }
