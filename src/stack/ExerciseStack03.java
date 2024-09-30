@@ -51,7 +51,7 @@ public class ExerciseStack03 {
 			int opConv = Integer.parseInt(op1);
 
 			if (opConv >= 0 && opConv <= 6) {
-				
+
 				switch (opConv) {
 
 				case 1:
@@ -93,12 +93,11 @@ public class ExerciseStack03 {
 					ver = false;
 					break;
 				}
-				
-				
+
 			} else {
-				
+
 				System.out.println("Número de opção não válido");
-				
+
 			}
 
 		}
