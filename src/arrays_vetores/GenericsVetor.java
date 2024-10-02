@@ -3,7 +3,6 @@ package arrays_vetores;
 public class GenericsVetor<T> {
 
 	private T[] elementos;
-
 //	Controla o tamanho real do vetor
 	private int tam;
 
