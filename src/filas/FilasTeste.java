@@ -13,8 +13,15 @@ public class FilasTeste {
 
 		System.out.println(filas);
 
-		System.out.println(filas.espiarFila());
-
+		/* System.out.println(filas.espiarFila()); */
+		
+		
+		filas.remover();
+		System.out.println(filas);
+		filas.remover();
+		System.out.println(filas);
+		filas.remover();
+		System.out.println(filas);
 	}
 
 }
