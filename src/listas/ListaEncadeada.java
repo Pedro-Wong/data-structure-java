@@ -134,23 +134,7 @@ public class ListaEncadeada<T> {
 		
 		return atual.getElemento();
 		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	// limpando a lista
